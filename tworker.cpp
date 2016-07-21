@@ -133,6 +133,7 @@ bool TWorker::readFile(const std::string &fileName, std::string &data)
     fread(buffer, sizeof(char), size, file);
     data = std::string(buffer);
     delete buffer;
+    fclose(file);
     return true;
 }
 
