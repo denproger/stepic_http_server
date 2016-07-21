@@ -30,6 +30,3 @@ HEADERS += \
     tapplication.h \
     thttpserver.h \
     tworker.h
-
-OTHERS += \
-    CMakeLists.txt
