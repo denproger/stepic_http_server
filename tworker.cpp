@@ -101,12 +101,12 @@ std::string TWorker::createHeader(int code, size_t contextLenth)
         case 200:
             header += "200 OK\r\nContent-length: " + std::to_string(contextLenth);
             break;
-        case 404:
+        default:
             header += "404 File Not Found\r\nContent-length: 0";
             break;
-        default:
-            header += "500 Internal Server Error";
-            break;
+        //default:
+        //    header += "500 Internal Server Error";
+        //    break;
     }
     header += "\r\nContent-Type: text/html\r\n\r\n";
     return header;
