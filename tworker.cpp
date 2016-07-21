@@ -71,7 +71,7 @@ bool TWorker::readRequest(int socket, std::string& request)
     return true;
 }
 
-bool TWorker::sendAnswer(int socket, std::__cxx11::string &answer)
+bool TWorker::sendAnswer(int socket, std::string &answer)
 {
     send(socket, answer.c_str(), answer.size(), 0);
 }
