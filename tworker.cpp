@@ -79,7 +79,9 @@ bool TWorker::sendAnswer(int socket, std::string &answer)
 bool TWorker::parseRequest(std::string &request, std::string &fileName)
 {
     fileName = request.substr(4, request.find("HTTP/1.")-5);
-
+    size_t pos = fileName.find("?");
+    if( pos != std::string::npos )
+        fileName = fileName.substr(0,pos);
     #if defined(DEBUG)
         std::cout << "\n\nFileName: \"" << fileName << "\"\n";
     #endif
